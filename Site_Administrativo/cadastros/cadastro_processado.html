@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>LOPES ADVOCACIA</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+    /*
+/* Created by Filipe Pina
+ * Specific styles of signin, register, component
+ */
+/*
+ * General styles
+ */
+
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: 'Oxygen', sans-serif;
+}
+
+.main{
+ 	margin-top: 70px;
+}
+
+h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+    </style>
+     <script src="../js/jquery.js"></script>
+     <script src="../js/bootstrap.min.js"></script>
+<script language="JavaScript">
+    function enviardados(){
+ 
+        if(document.dados.tx_nome.value=="")
+        {
+        alert( "É necessario preencher o nome completo para a realização cadastro" );
+        document.dados.tx_nome.focus();
+        return false;
+        }
+        if( document.dados.tx_tipo.value=="")
+        {
+        alert( "Escolha o tipo de processado" );
+        document.dados.tx_tipo.focus();
+        return false;
+        }
+        if (document.dados.tx_cpf.value.length<11)
+        {
+        alert( "Preencha o campo CPF corretamente/nCaso trate-se de uma empresa, registre apenas zeros" );
+        document.dados.tx_cpf.focus();
+        return false;
+        }
+        if (document.dados.tx_cnpj.value.length<11)
+        {
+        alert( "Preencha o campo CNPJ corretamente/nCaso trate-se de uma pessoa física, registre apenas zeros" );
+        document.dados.tx_cnpj.focus();
+        return false;
+        }
+
+		}
+                function formatar(mascara, documento){
+          var i = documento.value.length;
+          var saida = mascara.substring(0,1);
+          var texto = mascara.substring(i)
+
+          if (texto.substring(0,1) != saida){
+                    documento.value += texto.substring(0,1);
+          }
+
+                } 
+    </script>  
+    <link rel="icon" href="../../Cliente-visual/img/balanca.ico"> 
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="en">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="../css/sb-admin.css.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+		<title>Admin</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title" align="center">Lopes Advocacia</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form name="dados" onSubmit="return enviardados();" class="form-horizontal" method="post" action="../banco_de_dados/processado_cadastro.php">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Nome do processado: </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name_processado" id="tx_nome"  placeholder="Digite o nome"/>
+								</div>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Tipo de processado: </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<select class="form-control" name="tipo_processado" id="tx_tipo"/>
+                                    <option value="pessoa_fisica">Pessoa física</option>
+                                    <option value="pessoa_juridica">Pessoa Jurídica</option>
+                                    </select>
+								</div>
+							</div>
+						</div>
+                        
+                        <div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">CPF: </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="cpf_processado" id="tx_cpf"  placeholder="Digite o CPF" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" />
+								</div>
+							</div>
+						</div>
+                         <div class="form-group">
+							<label for="identidade_adv" class="cols-sm-2 control-label">CNPJ: </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="cnpj_processado" id="tx_cnpj"  maxlength="18" placeholder="Digite o CNPJ" OnKeyPress="formatar('##.###.###/####-##',this)"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Registrar processado</button>
+                        </div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+</html>
+	<script type="text/javascript">
+	
+	</script>
+</body>
+</html>
