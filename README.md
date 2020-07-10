@@ -9,6 +9,6 @@ A documentação, cujo foco era o site-sistema do estudo de caso, continha diver
 
 O estudo de caso, para esta equipe, teve como cliente um advogado que estava prestes a abrir um escritório e precisaria de um sistema capaz de armazenar informações diversas, sobre o cliente e suas informações de contato, sobre os advogados associados, entre outras informações. Além disso, o sistema deveria contar com um sistema de agendamento, para que os advogados pudessem registrar futuras reuniões ou eventos. 
 
-O projeto foi desenvolvido durante o ano de 2018. Apesar de não ter um código idealmenmte limpo, o sistema era funcional e foi aprovado com uma nota 8.8. Ele nunca foi usado na prática.
+O projeto foi desenvolvido durante o ano de 2018. Apesar de não ter um código idealmenmte limpo e os diretórios um tanto bagunçados, o sistema era funcional e foi aprovado com uma nota 8.8. Ele nunca foi usado na prática.
 
 OBS: Durante o desenvolvimento, o sistema sofreu problemas em relação a compactação e armazenamento em núvem, tendo parte de seus arquivos corrompidos. O efeito disso, no sistema, não é realmente grande e não o afeta de maneira perigosa.
